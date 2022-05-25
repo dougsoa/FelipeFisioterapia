@@ -48,6 +48,7 @@ html {
 }
 
 body {
+  width: 100%;
   font: 400 1rem var(--body-font);
   color: var(--text-color);
   background: var(--body-color);
@@ -78,20 +79,16 @@ body {
 
 .divider-1 {
   height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 36%, 57%, 1),
-    hsla(var(--hue), 65%, 88%, 0.34)
-  );
+  background: linear-gradient(270deg,
+      hsla(var(--hue), 36%, 57%, 1),
+      hsla(var(--hue), 65%, 88%, 0.34));
 }
 
 .divider-2 {
   height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 65%, 88%, 0.34),
-    hsla(var(--hue), 36%, 57%, 1)
-  );
+  background: linear-gradient(270deg,
+      hsla(var(--hue), 65%, 88%, 0.34),
+      hsla(var(--hue), 36%, 57%, 1));
 }
 
 /*====  LAYOUT ============================ */
@@ -532,6 +529,7 @@ footer .social a:hover {
 /*========= MEDIA QUERIES =========*/
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
+
   /* reusable classes */
   .container {
     max-width: 1120px;
@@ -650,12 +648,57 @@ footer .social a:hover {
     font-size: 2.25rem;
   }
 }
-/* large devices: 1023 > */
-/* large devices: 992 > */
-@media (min-width: 992px) {
+
+/* medium devices: 600 > */
+@media screen and (min-width: 600px) {
   :root {
     --title-font-size: 2.25rem;
     --subtitle-font-size: 1.125rem;
   }
+
+  .section {
+    padding: calc(5rem + var(--header-height)) 0;
+  }
+
+  .section .title {
+    margin-bottom: 1rem;
+  }
+
+  .section .subtitle {
+    font-size: var(--subtitle-font-size);
+  }
+
+  .section header {
+    margin-bottom: 1rem;
+  }
+
+  .section header strong {
+    color: var(--base-color);
+  }
+
+  /* testimonials */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+
 }
-/* medium devices: 767 > */
+
+/* medium devices: 360 > */
+@media screen and (min-width: 360px) {
+
+  /* testimonials */
+  #testimonials blockquote {
+    padding: 1rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0.25rem;
+  }
+
+  #testimonials div {
+    padding: 0;
+  }
+
+
+
+}
